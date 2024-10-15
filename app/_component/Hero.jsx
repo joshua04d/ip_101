@@ -18,9 +18,13 @@ function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
 
+     {/* Black tint for displaying over video */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"></div>
+
+
       {/* Main Content - Vertically and Horizontally Centered */}
       <section className="relative z-10 flex items-center justify-center h-full">
-        <div className="mx-auto max-w-xl text-center">
+        <div className="mx-auto max-w-xl text-center ">
           <h1 className="text-3xl text-primary font-extrabold sm:text-5xl">
             AI Course Generator
           </h1>
