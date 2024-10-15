@@ -6,7 +6,7 @@ function CreateCourse() {
       {/* Stepper */}
       <div>
         <div>
-          <h2 className='text-2xl text-primary font-medium'> Create Course</h2>
+          <h2 className='text-2xl text-primary font-medium'> Create Course </h2>
         </div>
       </div>
     </div>
