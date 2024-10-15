@@ -7,9 +7,9 @@ import React from 'react'
 function AddCourse() {
   const {user}=useUser();
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between' style={{ width: 'calc(100% - 250px) '}} >
       <div>
-      <h2 className='text-2xl'>Hello, <span className='font-bold'>{user?.fullName}</span></h2>
+      <h2 className='text-2xl'>Hello, <span className='font-bold'>{user?.firstName}</span></h2>
       <p className='text-sm text-gray-500'>Create a new Course with AI, based on your own pace</p>
     </div>
     <Link href={'/create-course'}>
