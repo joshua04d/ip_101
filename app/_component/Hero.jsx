@@ -11,7 +11,7 @@ function Hero() {
       {/* Background Video */}
       <video
         src="/video.mp4"
-        autoPlay
+        autoPlayasd
         muted
         loop
         playsInline
