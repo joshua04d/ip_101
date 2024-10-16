@@ -7,7 +7,7 @@ export default [
     },
     {
         id:2,
-        name:'Lotus',
+        name:'Health',
         icon:'/lotus.png',
         prompt:''
     },
