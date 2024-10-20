@@ -8,6 +8,27 @@ import SelectOptions from "./_components/SelectOptions";
 import { UserInputContext } from "../_context/UserINputContext";
 
 function CreateCourse() {
+
+  const checkStatus=()=>{
+    if(userCourseInput?.length==0)
+    {
+      return true;
+    }
+    if(activeIndex==0&&(userCourseInput?.category?.length==0||userCourseInput?.category==undefined))
+    {
+      return true;
+    }
+    if(activeIndex==1&&(userCourseInput?.topic?.length==0||userCourseInput?.topic==undefined))
+    {
+      return true ; 
+    }
+    else if(activeIndex==2&&(userCourseInput?.level==undefined||userCourseInput?.duration==undefined||userCourseInput?.displayVideo==undefined ||userCourseInput?.noOfChapters==undefined))
+    {
+      return true;
+    }
+      return false;  
+  }
+
   const StepperOptions = [
     {
       id: 1,
@@ -66,8 +87,8 @@ useEffect(()=>{
       <div className='flex justify-between mt-10'>
         <Button variant='outline' disabled={activeIndex==0} onClick={()=>SetActiveIndex(activeIndex-1)}>Previous</Button>
        
-       {activeIndex<2 && <Button disabled={activeIndex==2}onClick={()=>SetActiveIndex(activeIndex+1)} >Next</Button>}
-       {activeIndex==2 && <Button onClick={()=>SetActiveIndex(activeIndex+1)} >Generate Course Layout</Button>}
+       {activeIndex<2 && <Button disabled={checkStatus()} onClick={()=>SetActiveIndex(activeIndex+1)} >Next</Button>}
+       {activeIndex==2 && <Button disabled={checkStatus()} onClick={()=>SetActiveIndex(activeIndex+1)} >Generate Course Layout</Button>}
         </div>
       </div>
     </div>
