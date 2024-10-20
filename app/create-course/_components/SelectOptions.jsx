@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Select,
   SelectContent,
@@ -7,44 +7,56 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { UserInputContext } from "@/app/_context/UserINputContext";
 
 function SelectOptions() {
+  const { userCourseInput, setUserCourseInput } = useContext(UserInputContext);
+
+  const handleInputChange = (fieldName, value) => {
+    setUserCourseInput((prev) => ({
+      ...prev,
+      [fieldName]: value,
+    }));
+  };
+
   return (
-    <div className='px-10 md:px-20 lg:px-44'>
+    <div className="px-10 md:px-20 lg:px-44">
       <div className="grid grid-cols-2 gap-10">
+        {/* Difficulty Selection */}
         <div>
-          <label className='text-sm'>Difficulty</label>
-          <Select>
-            <SelectTrigger className="">
+          <label className="text-sm">Difficulty</label>
+          <Select onValueChange={(value) => handleInputChange('difficulty level', value)}>
+            <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Beginner">Beginner</SelectItem>
               <SelectItem value="Intermediate">Intermediate</SelectItem>
-              <SelectItem value="Advance">Advance</SelectItem>
+              <SelectItem value="Advanced">Advanced</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
-
+        {/* Course Duration */}
         <div>
-          <label className='text-sm'>Course Duration</label>
-          <Select>
-            <SelectTrigger className="">
+          <label className="text-sm">Course Duration</label>
+          <Select onValueChange={(value) => handleInputChange('duration', value)}>
+            <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="1 Hour">1 Hour</SelectItem>
-              <SelectItem value="Intermediate">2 Hour</SelectItem>
-              <SelectItem value="Advance">More tha 3 hours</SelectItem>
+              <SelectItem value="2 Hours">2 Hours</SelectItem>
+              <SelectItem value="More than 3 Hours">More than 3 Hours</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
+        {/* Display Video Selection */}
         <div>
-          <label className='text-sm'>Display Video</label>
-          <Select>
-            <SelectTrigger className="">
+          <label className="text-sm">Display Video</label>
+          <Select onValueChange={(value) => handleInputChange('display video', value)}>
+            <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
@@ -54,12 +66,14 @@ function SelectOptions() {
           </Select>
         </div>
 
+        {/* Number of Chapters Input */}
         <div>
-            <label className='text-sm'>No of chapters</label>
-            <Input type="number" />
+          <label className="text-sm">Number of Chapters</label>
+          <Input
+            type="number"
+            onChange={(event) => handleInputChange('No of chapters', event.target.value)}
+          />
         </div>
-
-
       </div>
     </div>
   );

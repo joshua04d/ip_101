@@ -1,10 +1,11 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { HiClipboardDocumentCheck, HiLightBulb, HiMiniSquares2X2 } from "react-icons/hi2";
 import SelectCategory from "./_components/SelectCategory";
 import TopicDescription from "./_components/TopicDescription";
 import SelectOptions from "./_components/SelectOptions";
+import { UserInputContext } from "../_context/UserINputContext";
 
 function CreateCourse() {
   const StepperOptions = [
@@ -25,7 +26,14 @@ function CreateCourse() {
     },
   ];
 
+  const { userCourseInput, setUserCourseInput } = useContext(UserInputContext);
+
   const [activeIndex, SetActiveIndex] = useState (0);
+
+useEffect(()=>{
+  console.log(userCourseInput);
+},[userCourseInput])
+
   return (
     <div>
       {/* Stepper */}
