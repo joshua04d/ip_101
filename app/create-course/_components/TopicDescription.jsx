@@ -20,6 +20,7 @@ function TopicDescription() {
         <label>Write the topic for which you want to generate the code</label>
         <Input
           placeholder="Topic"
+          defaultValue={userCourseInput?.topic}
           onChange={(e) => handleInputChange('topic', e.target.value)}
         />
       </div>
@@ -30,6 +31,7 @@ function TopicDescription() {
           Tell us more about your course, and what you want to include (Optional)
         </label>
         <Textarea
+         defaultValue={userCourseInput?.description}
           placeholder="About your course"
           onChange={(e) => handleInputChange('description', e.target.value)}
         />

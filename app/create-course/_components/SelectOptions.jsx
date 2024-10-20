@@ -25,7 +25,10 @@ function SelectOptions() {
         {/* Difficulty Selection */}
         <div>
           <label className="text-sm">Difficulty</label>
-          <Select onValueChange={(value) => handleInputChange('difficulty level', value)}>
+          <Select
+            value={userCourseInput?.level} // Use value instead of defaultValue
+            onValueChange={(value) => handleInputChange("level", value)}
+          >
             <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -40,7 +43,10 @@ function SelectOptions() {
         {/* Course Duration */}
         <div>
           <label className="text-sm">Course Duration</label>
-          <Select onValueChange={(value) => handleInputChange('duration', value)}>
+          <Select
+            value={userCourseInput?.duration} // Use value instead of defaultValue
+            onValueChange={(value) => handleInputChange("duration", value)}
+          >
             <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -55,7 +61,10 @@ function SelectOptions() {
         {/* Display Video Selection */}
         <div>
           <label className="text-sm">Display Video</label>
-          <Select onValueChange={(value) => handleInputChange('display video', value)}>
+          <Select
+            value={userCourseInput?.displayVideo} // Use value instead of defaultValue
+            onValueChange={(value) => handleInputChange("displayVideo", value)}
+          >
             <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -70,8 +79,9 @@ function SelectOptions() {
         <div>
           <label className="text-sm">Number of Chapters</label>
           <Input
+            value={userCourseInput?.noOfChapters} // Use value instead of defaultValue
             type="number"
-            onChange={(event) => handleInputChange('No of chapters', event.target.value)}
+            onChange={(event) => handleInputChange("noOfChapters", event.target.value)}
           />
         </div>
       </div>
