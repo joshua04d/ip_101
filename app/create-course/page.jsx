@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import React, { useContext, useEffect, useState } from "react";
 import { HiClipboardDocumentCheck, HiLightBulb, HiMiniSquares2X2 } from "react-icons/hi2";
@@ -12,8 +13,10 @@ import { CourseList } from "@/configs/schema";
 import { db } from "@/configs/db";
 import uuid4 from "uuid4";
 import { useUser } from "@clerk/nextjs";
+// import { useRouter } from "next/router";
 
 function CreateCourse() {
+  const routero= useRouter();
   const {user}=useUser();
   const [loading, setLoading]=useState(false);
   const checkStatus=()=>{
@@ -68,6 +71,7 @@ const GenerateCourseLayout=async()=>{
     });
 
     console.log("Finish");
+    routero.replace('/create-course/'+id);
     setLoading(false);
   }
 
