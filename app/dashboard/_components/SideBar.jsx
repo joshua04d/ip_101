@@ -55,7 +55,7 @@ function SideBar() {
     {Menu.map((item) => (
         <Link href={item.path} key={item.id}>
             <li
-                className={`flex items-center space-x-2 cursor-pointer p-2 rounded-lg transition-all duration-300 ease-in-out 
+                className={`flex items-center space-x-2 cursor-pointer p-2 rounded-3xl transition-all duration-300 ease-in-out 
                             ${item.path === path ? "bg-blue-900 text-white" : "hover:bg-blue-600 hover:text-white"}`}
             >
                 <span className="text-2xl">{item.icon}</span>
