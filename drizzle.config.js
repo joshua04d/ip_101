@@ -1,3 +1,5 @@
+require('dotenv').config(); 
+
 const { defineConfig } = require("drizzle-kit");
 
 module.exports = defineConfig({
@@ -5,6 +7,6 @@ module.exports = defineConfig({
   out: "./drizzle",
   dialect: "postgresql",  // This specifies the PostgreSQL dialect
   dbCredentials: {
-    url: 'postgresql://neondb_owner:P2jDm5HXQVfn@ep-bold-king-a504m80s.us-east-2.aws.neon.tech/ai_course_gen?sslmode=require',  // Make sure the .env file is correctly loaded
+    url: 'postgresql://neondb_owner:P2jDm5HXQVfn@ep-bold-king-a504m80s.us-east-2.aws.neon.tech/ai_course_gen?sslmode=require'
   },
 });

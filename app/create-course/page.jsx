@@ -53,8 +53,8 @@ const GenerateCourseLayout=async()=>{
   }
   
   const SaveCourseLayoutInDb=async(courseLayout)=>{
-    var id =uuid4()
-     setLoading(true);
+    var id =uuid4();
+     setLoading(true)
 
     const result= await db.insert(CourseList).values({
       courseId:id,
