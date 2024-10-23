@@ -11,14 +11,16 @@ function ChapterList({ course }) {
 
   return (
     <div className='mt-3'>
-      <h2>Chapters</h2>
-      <div className='mt-2'>
+      <h2 className='text-white'>Chapters</h2>
+      <div className='mt-4'>
         {chapters.length > 0 && (
           chapters.map((chapter, index) => (
-            <div key={index} className='chapter-item'>
-              <h2>{`Chapter ${index + 1}: ${chapter?.chapterName || 'Untitled Chapter'}`}</h2>
-              <p>{chapter?.about || 'No description available'}</p>
-              <p>{`Duration: ${chapter?.duration || 'No duration available'}`}</p>
+            <div key={index} className='chapter-item bg-white border rounded-lg p-4 mb-4 flex justify-between items-center'>
+              <div className=''> {/* White text for chapter info */}
+                <h1>{`Chapter ${index + 1}: ${chapter?.chapterName || 'Untitled Chapter'}`}</h1>
+                <p>{chapter?.about || 'No description available'}</p>
+                <p>{`Duration: ${chapter?.duration || 'No duration available'}`}</p>
+              </div>
               <HiCheckCircle className='2xl text-grey-100'/>
             </div>
           ))
@@ -29,4 +31,3 @@ function ChapterList({ course }) {
 }
 
 export default ChapterList;
- 

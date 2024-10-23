@@ -5,15 +5,17 @@ export default [
         icon:'/coding.png',
         prompt:''
     },
+    
     {
         id:2,
         name:'Health',
         icon:'/lotus.png',
         prompt:''
     },
+
     {
         id:3,
-        name:'Creaaive',
+        name:'Creative',
         icon:'/creative.png',
         prompt:''
     }

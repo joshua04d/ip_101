@@ -1,0 +1,9 @@
+.dashboard {
+    height: 100vh; /* Makes the background cover the full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* You can customize the colors */
+    color: white; /* Change text color if needed */
+  }
+  
